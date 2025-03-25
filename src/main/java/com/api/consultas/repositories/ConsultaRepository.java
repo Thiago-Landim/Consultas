@@ -10,4 +10,6 @@ public interface ConsultaRepository {
     List<Consulta> findByMedicoId(Long IdMedico);
 
     List<Consulta> findByPacienteId(Long IdPaciente);
+
+    Consulta save(Consulta consulta);
 }

@@ -6,4 +6,5 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @EnableJpaRepositories
 public interface PacienteRepository extends JpaRepository<Paciente, Long> {
+    Long IdPaciente(Long idPaciente);
 }
