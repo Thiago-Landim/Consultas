@@ -27,12 +27,11 @@ public class MarcarConsulta {
     public Consulta marcarConsulta(Long idMedico, Long IdPaciente, LocalDate agendaMedico) {
         //verifica se o médico existe.
         Medico medico = medicoRepository.findById(idMedico)
-                .orElseThrow(()-> new RuntimeException("Medico no encontrado"));
+                .orElseThrow(() -> new RuntimeException("Medico no encontrado"));
 
         //verifica se o paciente existe.
         Paciente paciente = pacienteRepository.findById(IdPaciente)
-                .orElseThrow(()-> new RuntimeException("Paciente no encontrado"));
-
+                .orElseThrow(() -> new RuntimeException("Paciente no encontrado"));
 
 
         // 3. Verifica se o médico está disponível no horário
@@ -40,7 +39,7 @@ public class MarcarConsulta {
         boolean medicoOcupado = consultaRepository.findByMedicoId(idMedico)
                 .stream()
                 .anyMatch(consulta -> consulta.getMedico().getAgendaMedico().equals(agendaMedico));
-        if (medicoOcupado){
+        if (medicoOcupado) {
             throw new RuntimeException("Medico indicponivel no horario solicitado");
         }
         Consulta consulta = new Consulta();
