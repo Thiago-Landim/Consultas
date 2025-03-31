@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @Setter
 @Getter
 @AllArgsConstructor
@@ -19,11 +21,16 @@ public class Consulta {
     private Long idConsulta;
 
     @ManyToOne
-    @JoinColumn(name = "crm",referencedColumnName = "crmMedico", nullable = false)
+    @JoinColumn(name = "ID_MEDICO",referencedColumnName = "ID_MEDICO", nullable = false)
     private Medico medico;
 
     @ManyToOne
-    @JoinColumn(name = "cpfPaciente", referencedColumnName = "cpfPaciente", nullable = false)
+    @JoinColumn(name = "ID_PACIENTE", referencedColumnName = "IdPaciente", nullable = false)
     private Paciente paciente;
+
+    @Column(name = "HORARIO_CONSULTA")
+    private LocalDate agendaMedico;
+
+
 
 }

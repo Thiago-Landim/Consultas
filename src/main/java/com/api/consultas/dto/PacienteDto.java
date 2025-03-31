@@ -9,4 +9,5 @@ public class PacienteDto {
 
     private String cpfPaciente;
     private String nomePaciente;
+    private int idadePaciente;
 }

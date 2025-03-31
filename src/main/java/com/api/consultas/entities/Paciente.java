@@ -18,10 +18,14 @@ public class Paciente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPaciente;
 
-    @Column(name = "NomePaciente",nullable = false ,length = 100)
+    @Column(name = "NOME_PACIENTE",nullable = false ,length = 100)
     private String nomePaciente;
 
-    @Column(name = "CpfPaciente",nullable = false,unique = true,length = 11)
+    @Column(name = "CPF_PACIENTE",nullable = false,unique = true,length = 11)
     private String cpfPaciente;
+
+    @Column(name = "IDADE_PACIENTE", nullable = false)
+    private int idadePaciente;
+
 
 }

@@ -21,10 +21,10 @@ public class Medico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idMedico;
-    @Column(name = "nomeMedico",nullable = false, length = 100)
+    @Column(name = "NOME_MEDICO",nullable = false, length = 100)
     private String nome;
-    @Column(name = "crmMedico",unique = true, length = 20)
+    @Column(name = "CRM_MEDICO",unique = true, length = 20)
     private String crm;
-    @Column(name = "agendaMedico",nullable = false)
+    @Column(name = "AGENDA_MEDICO",nullable = false)
     private LocalDate agendaMedico;
 }
